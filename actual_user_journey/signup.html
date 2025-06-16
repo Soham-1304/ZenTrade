@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - ZenTrade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://zerodha.com/static/images/favicon.png" />
+</head>
+<body class="bg-white">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+        <div class="w-full max-w-sm p-8 space-y-8">
+             <div>
+                <a href="login.html" class="flex justify-center">
+                    <svg viewBox="0 0 580 100" xmlns="http://www.w3.org/2000/svg" aria-label="ZenTrade logo" style="height: 32px; width: auto;">
+                        <g transform="translate(5, 0)"><path d="M10 10 L 90 10 L 50 50 Z" fill="#60a5fa"/><path d="M50 50 L 90 90 L 10 90 Z" fill="#2563EB"/></g>
+                        <text x="130" y="50%" dominant-baseline="middle" font-family="Inter, sans-serif" font-size="60" font-weight="600" letter-spacing="4" fill="#2563EB">ZENTRADE</text>
+                    </svg>
+                </a>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Create your account</h2>
+                <p class="mt-2 text-center text-sm text-gray-500">...and start your investment journey.</p>
+            </div>
+            <form id="signup-form" class="mt-8 space-y-6">
+                <div id="signup-error" class="hidden text-center text-sm text-red-600 p-2 bg-red-50 rounded"></div>
+                 <div class="rounded-md shadow-sm space-y-3">
+                    <input id="signup-name" name="name" type="text" required class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Your full name">
+                    <input id="signup-email" name="email" type="email" required class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Your email">
+                    <input id="signup-mobile" name="mobile" type="tel" pattern="[0-9]{10}" required class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Mobile number (10 digits)">
+                    <input id="signup-pin" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4}" required maxlength="4" class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Set your 4-Digit PIN">
+                </div>
+                 <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Create Account
+                </button>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Already have an account?
+                    <a href="login.html" class="font-medium text-blue-600 hover:text-blue-500">
+                        Login here
+                    </a>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Create a URLSearchParams object to easily read URL parameters
+            const params = new URLSearchParams(window.location.search);
+
+            // 2. Get the 'mobile' parameter from the URL
+            const mobileNumber = params.get('mobile');
+
+            // 3. If a mobile number was found, put it in the input field
+            if (mobileNumber) {
+                const mobileInput = document.getElementById('signup-mobile');
+                if(mobileInput) {
+                    mobileInput.value = mobileNumber;
+                }
+            }
+        });
+    </script>
+    <script src="auth.js"></script>
+</body>
+</html>

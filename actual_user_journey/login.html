@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+        <div class="w-full max-w-sm p-8 space-y-8">
+            <div>
+                <!-- Replaced Kite logo with ZenTrade SVG logo from signup.html -->
+                <a href="login.html" class="flex justify-center">
+                    <svg viewBox="0 0 580 100" xmlns="http://www.w3.org/2000/svg" aria-label="ZenTrade logo" style="height: 32px; width: auto;">
+                        <g transform="translate(5, 0)"><path d="M10 10 L 90 10 L 50 50 Z" fill="#60a5fa"/><path d="M50 50 L 90 90 L 10 90 Z" fill="#2563EB"/></g>
+                        <text x="130" y="50%" dominant-baseline="middle" font-family="Inter, sans-serif" font-size="60" font-weight="600" letter-spacing="4" fill="#2563EB">ZENTRADE</text>
+                    </svg>
+                </a>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Login to ZenTrade</h2>
+            </div>
+            <form id="login-form" class="mt-8 space-y-6">
+                <div id="login-error" class="hidden text-center text-sm text-red-600 p-2 bg-red-50 rounded"></div>
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                        <input id="login-mobile" name="mobile" type="tel" required class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Mobile number (10 digits)">
+                    </div>
+                    <div>
+                        <input id="login-pin" name="pin" type="password" required maxlength="4" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="4-Digit PIN">
+                    </div>
+                </div>
+                <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Login
+                </button>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Don't have an account?
+                    <a href="signup.html" class="font-medium text-blue-600 hover:text-blue-500">
+                        Sign up now
+                    </a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>
